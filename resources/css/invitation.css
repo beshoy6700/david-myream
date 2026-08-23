@@ -1,0 +1,235 @@
+/* ==============================
+   Wedding Invitation Design System
+================================= */
+
+:root {
+
+    --gold: #D4AF37;
+    --gold-light: #E7C766;
+
+    --bg: #020617;
+
+    --card: rgba(255, 255, 255, .04);
+
+    --border: rgba(212, 175, 55, .18);
+
+    --text: #F8F7F2;
+
+    --muted: #A9B2C4;
+
+    --shadow:
+        0 20px 60px rgba(0, 0, 0, .35);
+
+}
+
+/* ==============================
+    Card
+================================= */
+
+.inv-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: var(--shadow);
+}
+
+.inv-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(circle at top,
+            rgba(212, 175, 55, .06),
+            transparent 70%);
+
+    opacity: 0;
+
+    transition: .5s;
+}
+
+.inv-card:hover::before {
+
+    opacity: 1;
+}
+
+/* ==============================
+    Titles
+================================= */
+
+.inv-title {
+
+    color: var(--text);
+
+    font-size: 2.3rem;
+
+    font-weight: 300;
+}
+
+.inv-subtitle {
+
+    color: var(--muted);
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+}
+
+.inv-caption {
+
+    color: var(--gold);
+
+    font-size: .75rem;
+
+    letter-spacing: .45em;
+
+    text-transform: uppercase;
+}
+
+/* ==============================
+    Divider
+================================= */
+
+.inv-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin: 40px 0;
+}
+
+.inv-divider::before,
+.inv-divider::after {
+
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(to right,
+            transparent,
+            rgba(212, 175, 55, .25));
+}
+
+.inv-divider span {
+
+    color: var(--gold);
+}
+
+/* ==============================
+    Buttons
+================================= */
+
+.inv-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    height: 48px;
+
+    padding: 0 26px;
+
+    border-radius: 9999px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(212, 175, 55, .08);
+
+    color: var(--gold);
+
+    transition: .3s;
+}
+
+.inv-btn:hover {
+
+    background: var(--gold);
+
+    color: #111827;
+
+    transform: translateY(-2px);
+}
+
+/* ==============================
+    Circle Icon
+================================= */
+
+.inv-icon {
+
+    width: 72px;
+
+    height: 72px;
+
+    border-radius: 9999px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: auto;
+
+    border: 1px solid var(--border);
+
+    background: rgba(212, 175, 55, .08);
+
+    box-shadow:
+        0 0 35px rgba(212, 175, 55, .12);
+}
+
+/* ==============================
+    Fade
+================================= */
+
+.inv-section {
+
+    animation:
+        invitationFade .7s ease-out;
+}
+
+@keyframes invitationFade {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: none;
+
+    }
+
+}
