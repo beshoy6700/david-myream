@@ -17,6 +17,10 @@ enum GuestSourceEnum: string
         return match ($this) {
             self::David => 'ديفيد',
             self::BRIDE => 'مريام',
+            self::FATHER => 'والد العريس',
+            self::MOTHER => 'والدة العريس',
+            self::SISTER => 'أخت العريس',
+            self::BRIDE_SISTER => 'أخت العروس',
             self::PUBLIC => 'دعوة عامة',
         };
     }
@@ -25,7 +29,7 @@ enum GuestSourceEnum: string
     {
         return collect(self::cases())
             ->mapWithKeys(fn(self $case) => [
-                $case->value => $case->label()
+                $case->value => $case->label(),
             ])
             ->toArray();
     }
