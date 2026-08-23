@@ -6,8 +6,6 @@ enum GuestSourceEnum: string
 {
     case David = 'David';
     case BRIDE = 'Myream';
-    case FATHER = 'father';
-    case MOTHER = 'mother';
     case SISTER = 'SISTER';
     case BRIDE_SISTER = 'bride_sister';
     case PUBLIC = 'public';
@@ -17,8 +15,6 @@ enum GuestSourceEnum: string
         return match ($this) {
             self::David => 'ديفيد',
             self::BRIDE => 'مريام',
-            self::FATHER => 'والد العريس',
-            self::MOTHER => 'والدة العريس',
             self::SISTER => 'أخت العريس',
             self::BRIDE_SISTER => 'أخت العروس',
             self::PUBLIC => 'دعوة عامة',
